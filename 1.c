@@ -1,3 +1,4 @@
+/*Read three numbers and find the largest of the three.*/
 #include<stdio.h>
 main()
 {
