@@ -1,3 +1,4 @@
+//Read a number X and check whether X  is divisible by a given number Y or not//
 #include<stdio.h>
 main()
 {
