@@ -1,3 +1,4 @@
+/*Read three numbers and find the smallest of the three*/
 #include<stdio.h>
 main()
 {
