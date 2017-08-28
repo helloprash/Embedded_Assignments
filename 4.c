@@ -1,3 +1,4 @@
+//Read N numbers and prints average//
 #include<stdio.h>
 main()
 {
