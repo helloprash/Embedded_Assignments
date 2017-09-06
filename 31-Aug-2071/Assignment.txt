@@ -65,7 +65,7 @@ main()
 	 currentWindow=initial5Window;
 	 
      //READ LAST 5 TEMPERATURE VALUES
-	      printf("Enter last 5 temperature values:");
+	printf("Enter last 5 temperature values:");
         while(currentWindow>=initial5Window && currentWindow<=final5Window)
     	{
     	 temperature[currentWindow]=readTemperature(currentWindow);
@@ -73,7 +73,7 @@ main()
      	}
      
      //5 MINUTE WINDOW
- 	    printf("\n**********5min Window**********\nTemperature details b/w %dmins to %dmins\n",initial5Window+1,final5Window+1);
+ 	printf("\n**********5min Window**********\nTemperature details b/w %dmins to %dmins\n",initial5Window+1,final5Window+1);
     	minTemperature=readMinimumTemperature(temperature,initial5Window,final5Window);
     	maxTemperature=readMaximumTemperature(temperature,initial5Window,final5Window);
     	averageTemperature=readAverageTemperature(temperature,initial5Window,final5Window);
@@ -83,41 +83,41 @@ main()
     	printf("Maximum temperature for last 5 minutes = %d\n",maxTemperature);
     	printf("Average temperature for last 5 minutes = %d\n",averageTemperature);	
     	printf("Data sent successfully to server\n\n");
-			          initial5Window+=5;
-   			        final5Window+=5;
+			     initial5Window+=5;
+   			     final5Window+=5;
    	 	 	
      //10 MINUTE WINDOW	 	
 	if((final5Window>9) && (((final5Window+1)%15)==0))
    	{
    	 printf("**********10min Window**********\nTemperature details b/w %dmins to %dmins\n",initial10Window+1,final10Window+1);
    	 minTemperature=readMinimumTemperature(temperature,initial10Window,final10Window);
-     maxTemperature=readMaximumTemperature(temperature,initial10Window,final10Window);
+         maxTemperature=readMaximumTemperature(temperature,initial10Window,final10Window);
    	 averageTemperature=readAverageTemperature(temperature,initial10Window,final10Window);
    	 SendDataToServer(minTemperature,maxTemperature,averageTemperature);
    		
    	 printf("\nMinimum temperature for last 10 minutes = %d\n",minTemperature);
    	 printf("Maximum temperature for last 10 minutes = %d\n",maxTemperature);
-     printf("Average temperature for last 10 minutes = %d\n",averageTemperature);
-     printf("Data sent successfully to server\n\n");
+         printf("Average temperature for last 10 minutes = %d\n",averageTemperature);
+         printf("Data sent successfully to server\n\n");
     		        initial10Window+=10;
-    			      final10Window+=10;
+    			final10Window+=10;
 	   }
 			
      //15 MINUTE WINDOW		
 	if((final5Window>14) && (((final5Window+1)%20)==0))
    	{
    	 printf("**********15min Window**********\nTemperature details b/w %dmins to %dmins\n",initial15Window+1,final15Window+1);
-     minTemperature=readMinimumTemperature(temperature,initial15Window,final15Window);
-     maxTemperature=readMaximumTemperature(temperature,initial15Window,final15Window);
+         minTemperature=readMinimumTemperature(temperature,initial15Window,final15Window);
+         maxTemperature=readMaximumTemperature(temperature,initial15Window,final15Window);
    	 averageTemperature=readAverageTemperature(temperature,initial15Window,final15Window);
    	 SendDataToServer(minTemperature,maxTemperature,averageTemperature);
    		
-     printf("\nMinimum temperature for last 15 minutes = %d\n",minTemperature);
-     printf("Maximum temperature for last 15 minutes = %d\n",maxTemperature);
-     printf("Average temperature for last 15 minutes = %d\n",averageTemperature);
-     printf("Data sent successfully to server\n\n");
-    			      initial15Window+=15;
-    			      final15Window+=15;
-	  }
+         printf("\nMinimum temperature for last 15 minutes = %d\n",minTemperature);
+         printf("Maximum temperature for last 15 minutes = %d\n",maxTemperature);
+         printf("Average temperature for last 15 minutes = %d\n",averageTemperature);
+         printf("Data sent successfully to server\n\n");
+    			 initial15Window+=15;
+    			 final15Window+=15;
+	 }
    }	
 }
