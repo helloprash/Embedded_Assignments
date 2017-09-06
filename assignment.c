@@ -87,7 +87,7 @@ main()
    			final5Window+=5;
    	 	 	
      //10 MINUTE WINDOW	 	
-	if(final5Window>9)
+	if((final5Window>9) && (((final5Window+1)%10)==0))
    	{
    	 printf("**********10min Window**********\nTemperature details b/w %dmins to %dmins\n",initial10Window+1,final10Window+1);
    	 minTemperature=readMinimumTemperature(temperature,initial10Window,final10Window);
@@ -99,12 +99,12 @@ main()
    	 printf("Maximum temperature for last 10 minutes = %d\n",maxTemperature);
     	 printf("Average temperature for last 10 minutes = %d\n",averageTemperature);
     	 printf("Data sent successfully to server\n\n");
-    		        initial10Window+=5;
-    			final10Window+=5;
+    		        initial10Window+=10;
+    			final10Window+=10;
 	}
 			
      //15 MINUTE WINDOW		
-	if(final5Window>14)
+	if((final5Window>14) && (((final5Window+1)%15)==0))
    	{
    	 printf("**********15min Window**********\nTemperature details b/w %dmins to %dmins\n",initial15Window+1,final15Window+1);
     	 minTemperature=readMinimumTemperature(temperature,initial15Window,final15Window);
@@ -116,8 +116,8 @@ main()
     	 printf("Maximum temperature for last 15 minutes = %d\n",maxTemperature);
     	 printf("Average temperature for last 15 minutes = %d\n",averageTemperature);
     	 printf("Data sent successfully to server\n\n");
-    			initial15Window+=5;
-    			final15Window+=5;
+    			initial15Window+=15;
+    			final15Window+=15;
 	}
        }	
 }
