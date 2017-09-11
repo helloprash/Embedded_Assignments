@@ -26,8 +26,8 @@ int linearSearch(int array[])
 
 main()
 {
-	FILE *ptr;   //File pointer
-	int x;       //Value read from file
+	FILE *ptr;   	 //File pointer
+	int x;       	 //Value read from file
 	int idx=0;	 //Index of the array
 	int val;
 	int numArray[1000];	 
@@ -36,16 +36,16 @@ main()
 	ptr=fopen("num.txt","r");
 	while(flag==1)
 	{
-		val=fscanf(ptr,"%d",&x);
-		if(val==EOF)
-		{
-			flag=0;
+	    val=fscanf(ptr,"%d",&x);
+	    if(val==EOF)
+	    {
+		 flag=0;
 	    }
 	    else
 	    {
 	    	numArray[idx]=x;
-			idx++;
-		}
+		idx++;
+	    }
 	}
   
 	linearSearch(numArray);
