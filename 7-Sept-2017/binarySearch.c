@@ -12,7 +12,7 @@ int BinarySearch(int array[],int i)
 	printf("Enter the number to be searched:");
 	scanf("%d",&num);
 	
-	fptr=fopen("binary.html","w+");
+	fptr=fopen("binary.html","w");
 	while(flag==1)
 	{
 		if(upperBound<lowerBound)
