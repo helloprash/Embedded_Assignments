@@ -6,7 +6,15 @@ int linearSearch(int array[])
 	int idx;    		//Index of the array
 	FILE *fptr; 		//File pointer
 	
-	fptr=fopen("linear.html","w+");
+	fptr=fopen("linear.html","w");
+	if(fptr == NULL)
+   	{
+        	fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
+        	fprintf(fptr,"%s\n",strerror(errno));
+        	fprintf(fptr,"</HTML>\n");
+        	fclose(fptr);
+        	exit(0);
+    	}
 	
 	printf("Enter the number to be searched:");
 	scanf("%d",&num);
@@ -34,6 +42,11 @@ main()
 	int flag=1;
 	
 	ptr=fopen("num.txt","r");
+	if (ptr == NULL)
+   	{
+     	    printf("Unable to too open the file\n");
+            exit(1);
+  	}
 	while(flag==1)
 	{
 	    val=fscanf(ptr,"%d",&x);
