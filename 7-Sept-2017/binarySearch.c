@@ -60,7 +60,7 @@ main()
 	    else
 	    {
 	    	numArray[idx]=x;
-		printf("%d\n",numArray[idx];
+		printf("%d\n",numArray[idx]);
 		idx++;
 	    }
 	}
