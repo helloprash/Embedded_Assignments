@@ -17,7 +17,9 @@ int BinarySearch(int array[],int i)
 	{
 		if(upperBound<lowerBound)
 		{
-			fprintf(fptr,"%s","<html><H1><b><center>Number does not exist</center></b></H1></html>");
+			fprintf(fptr,"<HTML>\n");
+			fprintf(fptr,"%s","<H1><b><center>Number does not exist</center></b></H1>");
+			fprintf(fptr,"</HTML>\n");
 			flag=0;
 		}
 		
