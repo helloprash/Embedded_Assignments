@@ -17,7 +17,7 @@ int BinarySearch(int array[],int i)
 	{
 		if(upperBound<lowerBound)
 		{
-			fprintf(fptr,"%s","<H1><b><center>Number does not exist</center></b></H1>");
+			fprintf(fptr,"%s","<html><H1><b><center>Number does not exist</center></b></H1></html>");
 			flag=0;
 		}
 		
@@ -31,7 +31,7 @@ int BinarySearch(int array[],int i)
 		
 		else if(array[middlePoint]==num)
 		{
-			fprintf(fptr,"<H1><b><center>%d found at location %d</center></b></H1>",num,middlePoint+1);
+			fprintf(fptr,"<html><H1><b><center>%d found at location %d</center></b></H1></html>",num,middlePoint+1);
 			flag=0;
 		}
 	}
@@ -58,6 +58,7 @@ main()
 	    else
 	    {
 	    	numArray[idx]=x;
+		printf("%d\n",numArray[idx];
 		idx++;
 	    }
 	}
