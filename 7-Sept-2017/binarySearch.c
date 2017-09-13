@@ -1,4 +1,7 @@
 #include<stdio.h>
+#include<string.h>
+#include<errno.h>
+#include<stdlib.h>
 
 int BinarySearch(int array[],int i)
 {
@@ -13,6 +16,14 @@ int BinarySearch(int array[],int i)
 	scanf("%d",&num);
 	
 	fptr=fopen("binary.html","w");
+	if(fptr == NULL)
+   	{
+        	fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
+        	fprintf(fptr,"%s\n",strerror(errno));
+        	fprintf(fptr,"</HTML>\n");
+        	fclose(fptr);
+        	exit(0);
+    	}
 	while(flag==1)
 	{
 		if(upperBound<lowerBound)
@@ -50,6 +61,11 @@ main()
 	int numArray[1000];
 	
 	ptr=fopen("numsort.txt","r");
+	if (ptr == NULL)
+   	{
+     	    printf("Unable to too open the file\n");
+            exit(1);
+  	}
 	while(flag==1)
 	{
 	    val=fscanf(ptr,"%d",&x);
