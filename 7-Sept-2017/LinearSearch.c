@@ -7,6 +7,7 @@ int linearSearch(int array[])
 	FILE *fptr; 		//File pointer
 	
 	fptr=fopen("linear.html","w");
+	fprintf(fptr,"<HTML>\n");
 	if(fptr == NULL)
    	{
         	fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
@@ -30,6 +31,8 @@ int linearSearch(int array[])
 			fprintf(fptr,"%s","<H1><b><center>Number not found</center></b></H1>");
 		}
 	}
+	fprintf(fptr,"<HTML>\n");
+	fclose(fptr);
 }
 
 main()
@@ -62,4 +65,5 @@ main()
 	}
   
 	linearSearch(numArray);
+	fclose(ptr);
 }
