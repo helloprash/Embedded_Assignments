@@ -16,6 +16,7 @@ int BinarySearch(int array[],int i)
 	scanf("%d",&num);
 	
 	fptr=fopen("binary.html","w");
+	fprintf(fptr,"<HTML>\n");
 	if(fptr == NULL)
    	{
         	fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
@@ -28,7 +29,6 @@ int BinarySearch(int array[],int i)
 	{
 		if(upperBound<lowerBound)
 		{
-			fprintf(fptr,"<HTML>\n");
 			fprintf(fptr,"%s","<H1><b><center>Number does not exist</center></b></H1>");
 			fprintf(fptr,"</HTML>\n");
 			flag=0;
@@ -44,10 +44,12 @@ int BinarySearch(int array[],int i)
 		
 		else if(array[middlePoint]==num)
 		{
-			fprintf(fptr,"<html><H1><b><center>%d found at location %d</center></b></H1></html>",num,middlePoint+1);
+			fprintf(fptr,"<H1><b><center>%d found at location %d</center></b></H1>",num,middlePoint+1);
 			flag=0;
 		}
 	}
+	fprintf(fptr,"</HTML>\n");
+	fclose(fptr);
 }
 
 main()
@@ -82,4 +84,5 @@ main()
 	}
 	
 	BinarySearch(numArray,idx);	
+	fclose(ptr);
 }
