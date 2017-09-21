@@ -3,8 +3,8 @@
 
 int Sort(int a[],int length)
 {
-	  int *ptr1;
-	  int *ptr2;
+    int *ptr1;
+    int *ptr2;
     int temp; /* Temporary variable for swapping */
     int i ; /* Indicate my left hand pointer to the array */
     int j ; /* Indicate my right hand pointer to the array */
@@ -60,21 +60,21 @@ main()
 	
 	ptr=fopen("num.txt","r");
 	if (ptr == NULL)
-   {
-      printf("Unable to too open the file\n");
-      exit(1);
-   }
+   	{
+      		printf("Unable to too open the file\n");
+      		exit(1);
+   	}
 	while(flag==1)
 	{
 		val=fscanf(ptr,"%d",&x);
 		if(val==EOF)
 		{
 			flag=0;
-	  }
-	  else
-	  {
-	    	numArray[idx]=x;
-			  idx++;
+	  	}
+	  	else
+	  	{
+	    		numArray[idx]=x;
+			idx++;
 		}
 	}
 	
