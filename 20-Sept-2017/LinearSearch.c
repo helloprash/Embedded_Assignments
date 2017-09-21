@@ -29,7 +29,7 @@ int linearSearch(int *numptr)
 		val=*numptr;
 		if(val==num)
 		{
-			fprintf(fptr,"%s","<H1><b><center>Number Found!!</center></b></H1>");
+			fprintf(fptr,"%s","<H1><B><center>Number Found!!</center></B></H1>");
 			break;
 		}
 		else if(val==EOF)
