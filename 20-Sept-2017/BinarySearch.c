@@ -60,11 +60,11 @@ main()
 		if(val==EOF)
 		{
 			flag=0;
-	    }
-	    else
-	    {
-	    	numArray[idx]=x;
-	    	printf("%d\n",numArray[idx]);
+	    	}
+	    	else
+	    	{
+	    		numArray[idx]=x;
+	    		printf("%d\n",numArray[idx]);
 			idx++;
 		}
 	}
