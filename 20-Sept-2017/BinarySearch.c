@@ -14,12 +14,14 @@ int BinarySearch(int array[],int i)
 	scanf("%d",&num);
 	
 	fptr=fopen("binary.html","w");
+	fprintf(fptr,"<HTML>\n");
+	fprintf(fptr,"<meta http-equiv=\"refresh\" content=\"1\">\n");
 	while(flag==1)
 	{
 		
 		if(upperBound<lowerBound)
 		{
-			fprintf(fptr,"%s","<html><H1><b><center>Number does not exist</center></b></H1></html>");
+			fprintf(fptr,"%s","<H1><b><center>Number not found</center></b></H1>");
 			flag=0;
 		}
 		ptr=array;
@@ -27,17 +29,19 @@ int BinarySearch(int array[],int i)
 		ptr+=middlePoint;
 		
 		if(*ptr<num)
-		   lowerBound=middlePoint+1;
+		lowerBound=middlePoint+1;
 		
 		else if(*ptr>num)
-		   upperBound=middlePoint-1;
+		upperBound=middlePoint-1;
 		
 		else if(*ptr==num)
 		{
-		 	fprintf(fptr,"<html><H1><b><center>%d found at location %d</center></b></H1></html>",num,middlePoint+1);
+			fprintf(fptr,"<H1><b><center>%d found at location %d</center></b></H1>",num,middlePoint+1);
 			flag=0;
 		}
 	}
+	fprintf(fptr,"</HTML>\n");
+	fclose(fptr);
 }
 
 main()
