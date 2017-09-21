@@ -21,7 +21,7 @@ int BinarySearch(int array[],int i)
 		
 		if(upperBound<lowerBound)
 		{
-			fprintf(fptr,"%s","<H1><b><center>Number not found</center></b></H1>");
+			fprintf(fptr,"%s","<H1><B><center>Number not found</center></B></H1>");
 			flag=0;
 		}
 		ptr=array;
