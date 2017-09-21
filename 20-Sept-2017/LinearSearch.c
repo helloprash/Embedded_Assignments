@@ -10,14 +10,16 @@ int linearSearch(int *numptr)
 	int flag=1;
 	FILE *fptr; 		//File pointer
 	fptr=fopen("linear.html","w");
+	fprintf(fptr,"<HTML>\n");
+	fprintf(fptr,"<meta http-equiv=\"refresh\" content=\"1\">\n");
 	if(fptr == NULL)
-  {
-        fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
-        fprintf(fptr,"%s\n",strerror(errno));
-        fprintf(fptr,"</HTML>\n");
-        fclose(fptr);
-        exit(0);
-  }
+    	{
+        	fprintf(fptr,"<p>the error with file open is %d</p>\n",errno);
+       		fprintf(fptr,"%s\n",strerror(errno));
+        	fprintf(fptr,"</HTML>\n");
+        	fclose(fptr);
+        	exit(0);
+    	}
 	
 	printf("Enter the number to be searched:");
 	scanf("%d",&num);
@@ -31,13 +33,15 @@ int linearSearch(int *numptr)
 			break;
 		}
 		else if(val==EOF)
-			{
-				fprintf(fptr,"%s","<H1><b><center>Number not found</center></b></H1>");
-				flag=0;
-			}
+		{
+			fprintf(fptr,"%s","<H1><b><center>Number not found</center></b></H1>");
+			flag=0;
+		}
 		else
-	    	numptr++;
+	    		numptr++;
 	}
+	fprintf(fptr,"</HTML>\n");
+	fclose(fptr);
 }
 
 main()
@@ -51,10 +55,10 @@ main()
 	
 	ptr=fopen("num.txt","r");
 	if (ptr == NULL)
-  {
-      printf("Unable to too open the file\n");
-      exit(1);
-  }
+   	{
+  	    printf("Unable to too open the file\n");
+  	    exit(1);
+   	}
 
 	while(flag==1)
 	{
@@ -62,10 +66,10 @@ main()
 		if(val==EOF)
 		{
 			flag=0;
-	    }
-	    else
-	    {
-	    	numArray[idx]=x;
+	    	}
+	    	else
+	    	{
+	    		numArray[idx]=x;
 			idx++;
 		}
 	}
