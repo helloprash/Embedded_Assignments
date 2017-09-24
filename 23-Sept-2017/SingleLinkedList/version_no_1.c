@@ -12,44 +12,43 @@ typedef struct node
     void CreateList()
     {
     
-	  }
+	}
     void AddNode()
     {
     	
-	  }
+	}
     void DeleteNode()
     {
     	
-	  }
+	}
     void DisplayList()
     {
     	printf("\n----------------------------\n");
     	printf("List is empty\n");
     	printf("----------------------------\n\n");
-	  }
+	}
     void DeleteList()
     {
     	
-	  }
+	}
     void SearchList()
     {
     	
-	  }
-	  int DisplayMenu()
+	}
+	int DisplayMenu()
     {
-    	   int ch;
-    	   printf("1.CreateList\n");
-		     printf("2.AddNode\n");
-		     printf("3.DeleteNode\n");
-		     printf("4.DisplayList\n");
-		     printf("5.DeleteList\n");
-		     printf("6.SearchList\n");
-		     printf("7.Exit\n");
-         
-		     printf("\nOption:");
-		     scanf("%d",&ch);
-		  return ch;
-	  }
+    	int ch;
+    	printf("1.CreateList\n");
+		printf("2.AddNode\n");
+		printf("3.DeleteNode\n");
+		printf("4.DisplayList\n");
+		printf("5.DeleteList\n");
+		printf("6.SearchList\n");
+		printf("7.Exit\n");
+		printf("\nOption:");
+		scanf("%d",&ch);
+		return ch;
+	}
     
     int main()
     {
@@ -61,8 +60,7 @@ typedef struct node
         {
              choice = DisplayMenu() ;
              switch(choice)
-             {  
-                case 1 :
+             {  case 1 :
                 { 
                      CreateList() ;
                      break ;
