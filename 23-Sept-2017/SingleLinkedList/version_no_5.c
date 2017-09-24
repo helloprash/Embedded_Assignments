@@ -197,8 +197,7 @@ typedef struct node
                      break ;
                 }
                 case 6:
-                {
-                	DisplayList();
+	      {
                 	printf("\n----------------------------\n");
     				printf("***Search List***\n");
                     SearchList();
