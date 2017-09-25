@@ -96,7 +96,44 @@ typedef struct node
 	}
     void DeleteNode()
     {
-    
+    	int i,position;
+    	NODE *ptr=head;
+    	NODE *temp;
+    	if(head==NULL)
+    	{
+    		DisplayList();
+    		return;
+		}
+		printf("\nEnter the position to be deleted:");
+    	scanf("%d",&position);
+    	
+    	if(position-count>=1 || position==0)
+		{
+			printf("\nInvalid position\n");
+			return;
+		}
+		
+    	if(position==1)
+    	{
+    		head=ptr->next;
+    		ptr->next=NULL;
+    		free(ptr);
+    		count--;
+    		printf("Done\n");
+    		return;
+		}
+    	for(i=1;i<position-1;i++)
+    	{
+    		ptr=ptr->next;
+		}
+		
+			temp=ptr->next;
+			ptr->next=temp->next;
+			temp->next=NULL;
+			free(temp);
+			count--;
+			printf("Done\n");
+			return;
 	}
     void DeleteList()
     {
@@ -113,7 +150,7 @@ typedef struct node
     	}
     	else
     	{
-			printf("Enter the value to be searched:");
+			printf("\nEnter the value to be searched:");
 			scanf("%d",&value);	
 			
 			while(ptr!=NULL)
