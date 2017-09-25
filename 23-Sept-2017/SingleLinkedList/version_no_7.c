@@ -35,25 +35,25 @@ typedef struct node
         temp->data=value;
     	
     	temp->next=NULL;		
-	  }
-	  void DisplayList()
-    {
+     }
+     void DisplayList()
+     {
     	NODE *ptr=head;
     	printf("\nList is ");
     	if(head==NULL)
-    		  printf("empty");
+    	     printf("empty");
     	else	
     	{
-    			while(ptr->next!=NULL)
-    			{
-    				  printf("%d ",ptr->data);
-    				  ptr=ptr->next;
-				  }
-				  printf("%d ",ptr->data);
-			}
+    		while(ptr->next!=NULL)
+    		{
+    			printf("%d ",ptr->data);
+    			ptr=ptr->next;
+		}
+		printf("%d ",ptr->data);
+	}
     	  return;
-	  }
-    void AddNode(int pos)
+      }
+      void AddNode(int pos)
     {
     	  if(pos-count>=2 || pos==0)
 		    {
