@@ -79,7 +79,39 @@ typedef struct node
 	
 	void SearchList()
 	{
-		
+		NODE *ptr=head;
+    	int i=1,value,found=0;
+    	if(head==NULL)
+    	{
+			DisplayForward();
+    		return;
+    	}
+    	else
+    	{
+			printf("\nEnter the value to be searched:");
+			scanf("%d",&value);	
+			
+			while(ptr!=NULL)
+			{
+				if(ptr->data==value)
+				{
+					printf("\n%d is found in the list at position %d\n",value,i);
+					ptr=ptr->right;
+					found=1;
+					i++;
+					continue;
+				}
+				else
+				{
+					ptr=ptr->right;
+					i++;
+				}
+			}
+			if(found!=1)
+			{
+				printf("\n%d is not found in the list\n",value);
+			}
+		}	
 	}
 	
 	int DisplayMenu()
