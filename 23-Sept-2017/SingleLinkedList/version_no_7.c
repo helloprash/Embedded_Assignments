@@ -19,23 +19,23 @@ typedef struct node
     	temp=(NODE*)malloc(sizeof(NODE));
     	
     	if(head==NULL)
-			    head=temp;
+		head=temp;
     	else
     	{
     		scanPtr=head;  //scanPtr has the address of the previous node
     		while(scanPtr->next!=NULL)
     		{
     			scanPtr=scanPtr->next;
-			  }
-			    scanPtr->next=temp;
-		  }
+		}
+		scanPtr->next=temp;
+	}
     		
-		    printf("\nEnter the data to be stored:");
-    	  scanf("%d",&value);
+	printf("\nEnter the data to be stored:");
+    	scanf("%d",&value);
         temp->data=value;
     	
-    	  temp->next=NULL;		
-	    }
+    	temp->next=NULL;		
+	  }
 	  void DisplayList()
     {
     	NODE *ptr=head;
