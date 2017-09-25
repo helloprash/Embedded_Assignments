@@ -40,9 +40,49 @@ typedef struct node
 		return;
 	}
 	
-	void AddNode()
+	void AddNode(int pos)
 	{
+		int i,value;
+    	NODE *prevNode=head;
+    	NODE *currNode,*nextNode;
+    	
+    	if(pos-count>=2 || pos==0)
+		{
+			printf("\nInvalid position\n");
+			return;
+		}
 		
+		currNode=(NODE*)malloc(sizeof(NODE));
+		
+    	if(pos==1)
+    	{
+    		printf("Enter the value to be stored:");
+			scanf("%d",&value);
+			currNode->data=value;
+			
+    		currNode->right=head;
+    		head=currNode;
+    		count++;
+    	return;
+		}
+		
+    	for(i=1;i<pos-1;i++)
+    	{
+    		prevNode=prevNode->right;
+		}
+		
+			printf("Enter the value to be stored:");
+			scanf("%d",&value);
+			currNode->data=value;
+			
+			nextNode=prevNode->right;
+			prevNode->right=currNode;
+			currNode->right=nextNode;
+			currNode->left=prevNode;
+			if(nextNode!=NULL)
+			   nextNode->left=currNode;
+			count++;
+		return;
 	}
 	
 	void DeleteNode()
@@ -153,7 +193,10 @@ typedef struct node
                 {
                 	 printf("\n----------------------------\n");
     				 printf("***Add Node***\n");
-                     AddNode();
+    				 int position;
+    				 printf("\nEnter the position:");
+    				 scanf("%d",&position);
+                     AddNode(position);
                      printf("\n----------------------------\n");
                      break ;
                 }
