@@ -42,9 +42,23 @@ typedef struct node
 	}
     void DisplayList()
     {
+    	NODE *temp=head;
     	printf("\n----------------------------\n");
-    	printf("List is empty\n");
-    	printf("----------------------------\n\n");
+    	printf("***Display List***\n");
+    	printf("List is ");
+    	if(head==NULL)
+    		printf("empty");
+    	else	
+    		{
+    			while(temp->next!=NULL)
+    			{
+    				printf("%d ",temp->data);
+    				temp=temp->next;
+				}
+				printf("%d ",temp->data);
+			}
+    	printf("\n----------------------------\n\n");
+    	return;
 	}
     void DeleteList()
     {
@@ -118,7 +132,7 @@ typedef struct node
                 default:
                 {
                    printf("----------------------------\n");
-                   printf("Select a proper option\n");
+                   printf("Select a proper option\n");	
                    break ;
                 }
              }
