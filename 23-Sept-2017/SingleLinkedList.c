@@ -10,6 +10,7 @@ typedef struct node
     /* Declare head of the list as a Global Variable */
     NODE  *head=NULL;
     NODE  *scanPtr ;
+    int count=0;
     
     int CreateList()
     {
@@ -20,24 +21,22 @@ typedef struct node
     	if(head==NULL)
 			head=temp;
     	else
-    		scanPtr->next=temp;  //scanPtr has the address of the previous node
+    	{
+    		scanPtr=head;  //scanPtr has the address of the previous node
+    		while(scanPtr->next!=NULL)
+    		{
+    			scanPtr=scanPtr->next;
+			}
+			scanPtr->next=temp;
+		}
     		
-    	scanPtr=temp;            //scanPtr has the address of the present node
 		printf("Enter the data to be stored:");
     	scanf("%d",&value);
     	temp->data=value;
+    	
     	temp->next=NULL;		
-    		
 	}
-    void AddNode()
-    {
-    	
-	}
-    void DeleteNode()
-    {
-    	
-	}
-    void DisplayList()
+	void DisplayList()
     {
     	NODE *ptr=head;
     	printf("List is ");
@@ -53,6 +52,51 @@ typedef struct node
 				printf("%d ",ptr->data);
 			}
     	return;
+	}
+    void AddNode(int pos)
+    {
+    	if(pos-count>=2 || pos==0)
+		{
+			printf("\nInvalid position\n");
+			return;
+		}
+		
+    	int i,value;
+    	NODE *prevNode=head;
+    	
+    	NODE *currNode,*nextNode;
+		currNode=(NODE*)malloc(sizeof(NODE));
+		
+    	if(pos==1)
+    	{
+    		printf("Enter the value to be stored:");
+			scanf("%d",&value);
+			currNode->data=value;
+			
+    		currNode->next=head;
+    		head=currNode;
+    		count++;
+    		return;
+		}
+		
+    	for(i=1;i<pos-1;i++)
+    	{
+    		prevNode=prevNode->next;
+		}
+			printf("Enter the value to be stored:");
+			scanf("%d",&value);
+			currNode->data=value;
+			
+			nextNode=prevNode->next;
+			prevNode->next=currNode;
+			currNode->next=nextNode;
+			count++;
+
+		return;
+	}
+    void DeleteNode()
+    {
+    
 	}
     void DeleteList()
     {
@@ -92,7 +136,7 @@ typedef struct node
 			{
 				printf("%d is not found in the list\n",value);
 			}
-		}	
+		}		
 	}
 	int DisplayMenu()
     {
@@ -125,23 +169,33 @@ typedef struct node
                 	 printf("\n----------------------------\n");
     				 printf("***Create List***\n");
                      CreateList() ;
+                     count++;
                      printf("\n----------------------------\n");
                      break ;
                 }
                 case 2:
                 {
-                     AddNode();
+                	 printf("\n----------------------------\n");
+    				 printf("***Add Node***\n");
+    				 int position;
+    				 printf("Enter the position:");
+    				 scanf("%d",&position);
+                     AddNode(position);
+                     printf("\n----------------------------\n\n");
                      break ;
                 }
                 case 3:
                 {
-                     DeleteNode();
+                	printf("\n----------------------------\n");
+    				printf("***Delete Node***\n");
+                    DeleteNode();
+                    printf("\n----------------------------\n\n");
                      break ;
                 }
                 case 4:
                 {
                 	printf("\n----------------------------\n");
-    				printf("***Display List***\n\n");
+    				printf("***Display List***\n");
                     DisplayList() ;
                     printf("\n----------------------------\n\n");
                     break ;
@@ -149,6 +203,7 @@ typedef struct node
                 case 5:
                 {
                      DeleteList() ; /* travese through the list and remove each element by element */
+                     count=0;
                      break ;
                 }
                 case 6:
