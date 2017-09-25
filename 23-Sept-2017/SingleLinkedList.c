@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<malloc.h>
+#include<stdlib.h>
 typedef struct node 
     {
        int data ;
@@ -6,12 +8,29 @@ typedef struct node
     } NODE ;
     
     /* Declare head of the list as a Global Variable */
-    NODE  *head ;
+    NODE  *head=NULL;
     NODE  *scanPtr ;
     
-    void CreateList()
+    int CreateList()
     {
-    
+    	NODE *temp;
+    	printf("\n----------------------------\n");
+    	printf("***Create List***\n");
+    	int value;
+    	temp=(NODE*)malloc(sizeof(NODE));
+    	
+    	if(head==NULL)
+			head=temp;
+    	else
+    		scanPtr->next=temp;  //scanPtr has the address of the previous node
+    		
+    	scanPtr=temp;            //scanPtr has the address of the present node
+		printf("Enter the data to be stored:");
+    	scanf("%d",&value);
+    	temp->data=value;
+    	temp->next=NULL;		
+    		
+    	printf("\n----------------------------\n");
 	}
     void AddNode()
     {
@@ -38,12 +57,13 @@ typedef struct node
 	int DisplayMenu()
     {
     	int ch;
-    	printf("1.CreateList\n");
-		printf("2.AddNode\n");
-		printf("3.DeleteNode\n");
-		printf("4.DisplayList\n");
-		printf("5.DeleteList\n");
-		printf("6.SearchList\n");
+    	printf("----------------------------\n");
+    	printf("1.Create List\n");
+		printf("2.Add Node\n");
+		printf("3.Delete Node\n");
+		printf("4.Display List\n");
+		printf("5.Delete List\n");
+		printf("6.Search List\n");
 		printf("7.Exit\n");
 		printf("\nOption:");
 		scanf("%d",&ch);
@@ -97,6 +117,8 @@ typedef struct node
                 }
                 default:
                 {
+                   printf("----------------------------\n");
+                   printf("Select a proper option\n");
                    break ;
                 }
              }
