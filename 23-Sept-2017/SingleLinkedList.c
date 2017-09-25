@@ -19,81 +19,84 @@ typedef struct node
     	temp=(NODE*)malloc(sizeof(NODE));
     	
     	if(head==NULL)
-			head=temp;
+	        head=temp;
     	else
     	{
     		scanPtr=head;  //scanPtr has the address of the previous node
     		while(scanPtr->next!=NULL)
     		{
     			scanPtr=scanPtr->next;
-			}
+	        }
 			scanPtr->next=temp;
-		}
+        }
     		
-		printf("Enter the data to be stored:");
+        printf("\nEnter the data to be stored:");
     	scanf("%d",&value);
     	temp->data=value;
     	
-    	temp->next=NULL;		
-	}
-	void DisplayList()
+    	temp->next=NULL;
+	return;		
+    }
+	
+    void DisplayList()
     {
     	NODE *ptr=head;
-    	printf("List is ");
+    	printf("\nList is ");
     	if(head==NULL)
-    		printf("empty");
+    	printf("empty");
     	else	
+    	{
+    		while(ptr!=NULL)
     		{
-    			while(ptr->next!=NULL)
-    			{
-    				printf("%d ",ptr->data);
-    				ptr=ptr->next;
-				}
-				printf("%d ",ptr->data);
-			}
-    	return;
+    			printf("%d ",ptr->data);
+    			ptr=ptr->next;
+		}
 	}
+    	return;
+     }
+	
     void AddNode(int pos)
     {
-    	if(pos-count>=2 || pos==0)
-		{
-			printf("\nInvalid position\n");
-			return;
-		}
-		
     	int i,value;
     	NODE *prevNode=head;
-    	
     	NODE *currNode,*nextNode;
-		currNode=(NODE*)malloc(sizeof(NODE));
+    	
+    	if(pos-count>=2 || pos==0)
+	{
+		printf("\nInvalid position\n");
+	 	return;
+	}
+		
+	currNode=(NODE*)malloc(sizeof(NODE));
 		
     	if(pos==1)
     	{
     		printf("Enter the value to be stored:");
-			scanf("%d",&value);
-			currNode->data=value;
+		scanf("%d",&value);
+		currNode->data=value;
 			
     		currNode->next=head;
     		head=currNode;
     		count++;
-    		return;
-		}
+    	        return;
+	}
 		
     	for(i=1;i<pos-1;i++)
     	{
     		prevNode=prevNode->next;
-		}
-			printf("Enter the value to be stored:");
-			scanf("%d",&value);
-			currNode->data=value;
-			
-			nextNode=prevNode->next;
-			prevNode->next=currNode;
-			currNode->next=nextNode;
-			count++;
-
-		return;
 	}
+		
+	printf("Enter the value to be stored:");
+	scanf("%d",&value);
+	currNode->data=value;
+			
+	nextNode=prevNode->next;
+	prevNode->next=currNode;
+	currNode->next=nextNode;
+	count++;
+	return;
+    }
+	
     void DeleteNode()
     {
     	int i,position;
@@ -103,15 +106,15 @@ typedef struct node
     	{
     		DisplayList();
     		return;
-		}
-		printf("\nEnter the position to be deleted:");
+	}
+	printf("\nEnter the position to be deleted:");
     	scanf("%d",&position);
     	
     	if(position-count>=1 || position==0)
-		{
-			printf("\nInvalid position\n");
-			return;
-		}
+	{
+		printf("\nInvalid position\n");
+		return;
+	}
 		
     	if(position==1)
     	{
@@ -120,76 +123,97 @@ typedef struct node
     		free(ptr);
     		count--;
     		printf("Done\n");
-    		return;
-		}
+    	        return;
+	}
     	for(i=1;i<position-1;i++)
     	{
     		ptr=ptr->next;
-		}
-		
-			temp=ptr->next;
-			ptr->next=temp->next;
-			temp->next=NULL;
-			free(temp);
-			count--;
-			printf("Done\n");
-			return;
 	}
+	temp=ptr->next;
+	ptr->next=temp->next;
+	temp->next=NULL;
+	free(temp);
+	count--;
+	printf("Done\n");
+	return;
+    }
+	
     void DeleteList()
     {
-    	
+    	if(head==NULL)
+    	{
+    		DisplayList();
+    	        return;
 	}
+    	NODE *ptr=head;
+    	head=NULL;
+    	NODE *temp;
+    	
+    	while(ptr!=NULL)
+    	{
+    		temp=ptr->next;
+    		ptr->data=0;
+    		ptr->next=NULL;
+    		free(ptr);
+    		ptr=temp;
+	}
+	printf("Done\n");
+    	free(ptr);
+        return;
+    }
+	
     void SearchList()
     {
     	NODE *ptr=head;
     	int i=1,value,found=0;
     	if(head==NULL)
     	{
-			DisplayList();
+	        DisplayList();
     		return;
     	}
     	else
     	{
-			printf("\nEnter the value to be searched:");
-			scanf("%d",&value);	
+		printf("\nEnter the value to be searched:");
+		scanf("%d",&value);	
 			
-			while(ptr!=NULL)
+		while(ptr!=NULL)
+		{
+			if(ptr->data==value)
 			{
-				if(ptr->data==value)
-				{
-					printf("%d is found in the list at position %d\n",value,i);
-					ptr=ptr->next;
-					found=1;
-					i++;
-					continue;
-				}
-				else
-				{
-					ptr=ptr->next;
-					i++;
-				}
+				printf("%d is found in the list at position %d\n",value,i);
+				ptr=ptr->next;
+				found=1;
+				i++;
+				continue;
 			}
-			if(found!=1)
+			else
 			{
-				printf("%d is not found in the list\n",value);
+				ptr=ptr->next;
+				i++;
 			}
-		}		
-	}
-	int DisplayMenu()
+		}
+		if(found!=1)
+		{
+			printf("%d is not found in the list\n",value);
+		}
+	}	
+    }
+	
+    int DisplayMenu()
     {
     	int ch;
     	printf("----------------------------\n");
     	printf("1.Create List\n");
-		printf("2.Add Node\n");
-		printf("3.Delete Node\n");
-		printf("4.Display List\n");
-		printf("5.Delete List\n");
-		printf("6.Search List\n");
-		printf("7.Exit\n");
-		printf("\nOption:");
-		scanf("%d",&ch);
-		return ch;
-	}
+	printf("2.Add Node\n");
+	printf("3.Delete Node\n");
+	printf("4.Display List\n");
+	printf("5.Delete List\n");
+	printf("6.Search List\n");
+	printf("7.Exit\n");
+	printf("\nOption:");
+	scanf("%d",&ch);
+	return ch;
+    }
     
     int main()
     {
@@ -201,10 +225,11 @@ typedef struct node
         {
              choice = DisplayMenu() ;
              switch(choice)
-             {  case 1 :
+             {  
+		case 1 :
                 { 
-                	 printf("\n----------------------------\n");
-    				 printf("***Create List***\n");
+                     printf("\n----------------------------\n");
+    		     printf("***Create List***\n");
                      CreateList() ;
                      count++;
                      printf("\n----------------------------\n");
@@ -212,41 +237,44 @@ typedef struct node
                 }
                 case 2:
                 {
-                	 printf("\n----------------------------\n");
-    				 printf("***Add Node***\n");
-    				 int position;
-    				 printf("Enter the position:");
-    				 scanf("%d",&position);
+                     printf("\n----------------------------\n");
+    		     printf("***Add Node***\n");
+    		     int position;
+    		     printf("\nEnter the position:");
+    		     scanf("%d",&position);
                      AddNode(position);
                      printf("\n----------------------------\n\n");
                      break ;
                 }
                 case 3:
                 {
-                	printf("\n----------------------------\n");
-    				printf("***Delete Node***\n");
+                    printf("\n----------------------------\n");
+    		    printf("***Delete Node***\n");
                     DeleteNode();
                     printf("\n----------------------------\n\n");
-                     break ;
+                    break ;
                 }
                 case 4:
                 {
-                	printf("\n----------------------------\n");
-    				printf("***Display List***\n");
+                    printf("\n----------------------------\n");
+    		    printf("***Display List***\n");
                     DisplayList() ;
                     printf("\n----------------------------\n\n");
                     break ;
                 }
                 case 5:
                 {
-                     DeleteList() ; /* travese through the list and remove each element by element */
-                     count=0;
-                     break ;
+                    printf("\n----------------------------\n");
+    		    printf("***Delete List***\n");
+                    DeleteList() ; /* travese through the list and remove each element by element */
+                    count=0;
+                    printf("\n----------------------------\n\n");
+                    break ;
                 }
                 case 6:
                 {
-                	printf("\n----------------------------\n");
-    				printf("***Search List***\n");
+                    printf("\n----------------------------\n");
+    		    printf("***Search List***\n");
                     SearchList();
                     printf("\n----------------------------\n\n");
                     break ;
