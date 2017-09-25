@@ -14,8 +14,6 @@ typedef struct node
     int CreateList()
     {
     	NODE *temp;
-    	printf("\n----------------------------\n");
-    	printf("***Create List***\n");
     	int value;
     	temp=(NODE*)malloc(sizeof(NODE));
     	
@@ -30,7 +28,6 @@ typedef struct node
     	temp->data=value;
     	temp->next=NULL;		
     		
-    	printf("\n----------------------------\n");
 	}
     void AddNode()
     {
@@ -42,22 +39,19 @@ typedef struct node
 	}
     void DisplayList()
     {
-    	NODE *temp=head;
-    	printf("\n----------------------------\n");
-    	printf("***Display List***\n");
+    	NODE *ptr=head;
     	printf("List is ");
     	if(head==NULL)
     		printf("empty");
     	else	
     		{
-    			while(temp->next!=NULL)
+    			while(ptr->next!=NULL)
     			{
-    				printf("%d ",temp->data);
-    				temp=temp->next;
+    				printf("%d ",ptr->data);
+    				ptr=ptr->next;
 				}
-				printf("%d ",temp->data);
+				printf("%d ",ptr->data);
 			}
-    	printf("\n----------------------------\n\n");
     	return;
 	}
     void DeleteList()
@@ -66,7 +60,39 @@ typedef struct node
 	}
     void SearchList()
     {
-    	
+    	NODE *ptr=head;
+    	int i=1,value,found=0;
+    	if(head==NULL)
+    	{
+			DisplayList();
+    		return;
+    	}
+    	else
+    	{
+			printf("Enter the value to be searched:");
+			scanf("%d",&value);	
+			
+			while(ptr!=NULL)
+			{
+				if(ptr->data==value)
+				{
+					printf("%d is found in the list at position %d\n",value,i);
+					ptr=ptr->next;
+					found=1;
+					i++;
+					continue;
+				}
+				else
+				{
+					ptr=ptr->next;
+					i++;
+				}
+			}
+			if(found!=1)
+			{
+				printf("%d is not found in the list\n",value);
+			}
+		}	
 	}
 	int DisplayMenu()
     {
@@ -96,7 +122,10 @@ typedef struct node
              switch(choice)
              {  case 1 :
                 { 
+                	 printf("\n----------------------------\n");
+    				 printf("***Create List***\n");
                      CreateList() ;
+                     printf("\n----------------------------\n");
                      break ;
                 }
                 case 2:
@@ -111,7 +140,10 @@ typedef struct node
                 }
                 case 4:
                 {
+                	printf("\n----------------------------\n");
+    				printf("***Display List***\n\n");
                     DisplayList() ;
+                    printf("\n----------------------------\n\n");
                     break ;
                 }
                 case 5:
@@ -121,7 +153,10 @@ typedef struct node
                 }
                 case 6:
                 {
+                	printf("\n----------------------------\n");
+    				printf("***Search List***\n");
                     SearchList();
+                    printf("\n----------------------------\n\n");
                     break ;
                 }
                 case 7:
