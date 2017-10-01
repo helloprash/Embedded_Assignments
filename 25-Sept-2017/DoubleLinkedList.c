@@ -19,10 +19,7 @@ typedef struct node
     	temp=(NODE*)malloc(sizeof(NODE));
     	
     	if(head==NULL)
-		{
 			head=temp;
-			temp->left=NULL;
-		}
 		else
 		{
 			scanPtr=head;
@@ -55,7 +52,19 @@ typedef struct node
 	
 	void DisplayForward()
 	{
-		
+		NODE *ptr=head;
+    	printf("\nList is ");
+    	if(head==NULL)
+    		printf("empty");
+    	else	
+    		{
+    			while(ptr!=NULL)
+    			{
+    				printf("%d ",ptr->data);
+    				ptr=ptr->right;
+				}
+			}
+    	return;
 	}
 	
 	void DisplayReverse() 
