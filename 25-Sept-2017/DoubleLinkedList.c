@@ -69,7 +69,24 @@ typedef struct node
 	
 	void DisplayReverse() 
 	{
-		
+		NODE *ptr=head;
+    	printf("\nList is ");
+    	if(head==NULL)
+    		printf("empty");
+    	else	
+    		{
+    			while(ptr->right!=NULL)
+    			{
+    				ptr=ptr->right;
+				}
+				while(ptr!=head)
+				{
+					printf("%d ",ptr->data);
+					ptr=ptr->left;
+				}
+				printf("%d ",ptr->data);
+			}
+    	return;
 	}
 	
 	void DeleteList()
