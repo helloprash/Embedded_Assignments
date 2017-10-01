@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<malloc.h>
 typedef struct node 
     {
        int data ;
@@ -7,12 +8,39 @@ typedef struct node
     } NODE ;
     
     /* Declare head of the list as a Global Variable */
-    NODE  *head ;
+    NODE  *head=NULL;
     NODE  *scanPtr ;
+    int count=0;
     
     void CreateList()
     {
+    	NODE *temp;
+    	int value;
+    	temp=(NODE*)malloc(sizeof(NODE));
     	
+    	if(head==NULL)
+		{
+			head=temp;
+			temp->left=NULL;
+		}
+		else
+		{
+			scanPtr=head;
+			while(scanPtr->right!=NULL)
+    		{
+    			scanPtr=scanPtr->right;
+			}
+			scanPtr->right=temp;
+			temp->left=scanPtr;
+		}
+		
+		printf("\nEnter the data to be stored:");
+    	scanf("%d",&value);
+    	temp->data=value;
+    	
+		temp->right=NULL;
+		count++;
+		return;
 	}
 	
 	void AddNode()
