@@ -40,6 +40,23 @@ typedef struct node
 		return;
 	}
 	
+	void DisplayForward()
+	{
+		NODE *ptr=head;
+    	printf("\nList is ");
+    	if(head==NULL)
+    		printf("empty");
+    	else	
+    		{
+    			while(ptr!=NULL)
+    			{
+    				printf("%d ",ptr->data);
+    				ptr=ptr->right;
+				}
+			}
+    	return;
+	}
+	
 	void AddNode(int pos)
 	{
 		int i,value;
@@ -62,7 +79,6 @@ typedef struct node
 			
 			head->left=currNode;
     		currNode->right=head;
-    		currNode->left=NULL;
     		head=currNode;
     		count++;
     	return;
@@ -89,24 +105,51 @@ typedef struct node
 	
 	void DeleteNode()
 	{
-		
-	}
-	
-	void DisplayForward()
-	{
-		NODE *ptr=head;
-    	printf("\nList is ");
+		int i,position;
+    	NODE *ptr=head;
+    	NODE *temp;
+    	NODE *temp1;
     	if(head==NULL)
-    		printf("empty");
-    	else	
-    		{
-    			while(ptr!=NULL)
-    			{
-    				printf("%d ",ptr->data);
-    				ptr=ptr->right;
-				}
-			}
+    	{
+    		DisplayForward();
+    		return;
+		}
+		printf("\nEnter the position to be deleted:");
+    	scanf("%d",&position);
+    	
+    	if(position-count>=1 || position==0)
+		{
+			printf("\nInvalid position\n");
+			return;
+		}
+		
+    	if(position==1)
+    	{
+    		head=ptr->right;
+    		head->left=NULL;
+    		ptr->right=NULL;
+    		free(ptr);
+    		count--;
+    		printf("Done\n");
     	return;
+		}
+    	for(i=1;i<position-1;i++)
+    	{
+    		ptr=ptr->right;
+		}
+			temp=ptr->right;
+			temp1=temp->right;
+			ptr->right=temp1;
+			if(temp->right!=NULL)
+			{
+				temp1->left=ptr;
+			}
+			temp->right=NULL;
+			temp->left=NULL;
+			free(temp);
+			count--;
+			printf("Done\n");
+		return;
 	}
 	
 	void DisplayReverse() 
