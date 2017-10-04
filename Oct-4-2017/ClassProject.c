@@ -92,7 +92,7 @@ int writeToCsv()
     FILE *ptr;
     int idx=0;
 		
-	ptr=fopen("outputFile.csv","w");
+	ptr=fopen("outputCsvFile.csv","w");
 	fprintf(ptr,"Bracket,numberOfUsers\n");
 	for(idx=0;idx<10;idx++)
 	{
@@ -120,7 +120,7 @@ main(int argc, char **argv)
   	}
   	else
   	{
-    	    printf("Wrong comand line args\n");
+    	    printf("Wrong command line arguments\n");
     	    exit(1);
   	}
 
