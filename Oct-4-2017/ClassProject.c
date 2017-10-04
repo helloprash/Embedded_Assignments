@@ -92,7 +92,7 @@ int writeToCsv()
     FILE *ptr;
     int idx=0;
 		
-	ptr=fopen("output.csv","w");
+	ptr=fopen("outputFile.csv","w");
 	fprintf(ptr,"Bracket,numberOfUsers\n");
 	for(idx=0;idx<10;idx++)
 	{
