@@ -57,6 +57,7 @@ int PercentOfMax(float maxUsage)
 	}
 }
 
+/*To classify the data based on the number of users in each percentage bracket*/
 int ClassifyData()
 {
     USAGE   *ptr=head;
@@ -85,6 +86,7 @@ int ClassifyData()
   	   }
 }
 
+/*To write the classified data into a CSV file*/
 int writeToCsv()
 {
     FILE *ptr;
