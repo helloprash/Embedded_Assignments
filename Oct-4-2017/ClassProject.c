@@ -19,7 +19,7 @@ typedef struct classifiedData
 } CLASSIFIED;
 
 /*Global variable declaration*/
-	  USAGE  *head=NULL;
+    USAGE  *head=NULL;
     USAGE  *scanPtr ;
     float 	bracketPercent[10];
     CLASSIFIED  classify[10];
