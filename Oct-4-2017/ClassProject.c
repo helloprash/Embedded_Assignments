@@ -28,7 +28,7 @@ typedef struct classifiedData
 
 int readFileToLinkedList(char FileName[10])
 {
-	FILE    *FilePtr ;
+    FILE    *FilePtr ;
     USAGE   *temp;
     int      flag=1;
     char     buffer[300];
@@ -57,15 +57,15 @@ int readFileToLinkedList(char FileName[10])
      	    temp=(USAGE*)malloc(sizeof(USAGE));
      	    
      	    if(head==NULL)
-		    {
-				  head=temp;
-				  tail=temp;
-			}
+	    {
+		  head=temp;
+		  tail=temp;
+	    }
     	    else
     	    {
-    		      tail->next=temp;
-    		      tail=temp;
-	        }
+    		  tail->next=temp;
+    		  tail=temp;
+	    }
 		
      	    ret=strtok(buffer,",");
      	    strcpy(temp->name,ret);
