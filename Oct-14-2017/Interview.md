@@ -25,10 +25,12 @@ The types of Storage class specifiers are
 
 ### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
 while() loop: A while loop is used when a given set of instruction are to be executed over and over until the condition is set false.
+
 do while() loop: A do while loop is similar to that of a while loop except that the given set of instructions are executed atleast once before the conditions are checked.
 		
 ### 7.Recently while going through a C program I saw two functions malloc() & calloc() can you tell me what are they used for ?
 malloc() function is used to allocate a block of memory to the variable from the heap and returns a void pointer to the begining of the block.malloc doesn't initializes the allocated memory.
+
 calloc() allocates a block of memory and initializes the allocated memory to zero.
 
 ### 8.Can you explain to me with the help of a small program how malloc() is used ?
@@ -40,6 +42,11 @@ main()
 {
 	int *temp;
 	temp=(int*)malloc(sizeof(int));
+	.
+	.
+	.
+	.
+	.
 	free(temp);
 
 }
