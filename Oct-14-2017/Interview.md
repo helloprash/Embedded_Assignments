@@ -108,9 +108,7 @@ Once the operations on the file have been done, we need to close the file using 
 
 ### 3.What is the function call (or API) to open a file. Can you explain all the parameters that this API takes and list all possible variations of the parameters of this function.
 The function call for opening a file is ```FILE *fopen(const char *filename, const char *mode)```
-
 Filename is the name of the file that has to be opened.
-
 Mode is the type of operation that is performed on the file.
 
 ### 4.Have you heard of a term called enumuration ?
