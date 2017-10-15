@@ -154,7 +154,7 @@ There are 6 operators
 Symbol|Operator
 ----  |----
 &     |bitwise AND
-||    |bitwise inclusive OR
+ |    |bitwise inclusive OR
 ^     |bitwise XOR (eXclusive OR)
 <<    |left shift
 >>    |right shift
