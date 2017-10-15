@@ -154,15 +154,41 @@ There are 6 operators
 Symbol|Operator
 ----  |----
 &     |bitwise AND
-|     |bitwise inclusive OR
+||    |bitwise inclusive OR
 ^     |bitwise XOR (eXclusive OR)
 <<    |left shift
 >>    |right shift
 ~     |bitwise NOT (one's complement) (unary)
 
 ### 8.While talking to a friend I heard of a term called variable parameters in C what exactly it is can you explain to me ?
+Variable parameters also called variable arguments in which the function can take variable number of arguments instead of predefined number of parameters.
+
 ### 9.Can you explain to me with an example how to use command line program with an example ?
+```
+//A program to add 2 numbers
+#include<stdio.h>
+main(int argc, char *argv[])
+{
+ int firstNum;
+ int secondNum;
+ int Add;
+     if (argc >2 )
+     {
+         firstNum = atoi(argv[1]) ;
+         secondNum = atoi(argv[2]);
+     }
+     else
+     {
+        printf("Insufficient Arguments\n");
+        return;
+     }
+     Add=firstNum + secondNum;
+     printf("%d\n",Add);
+}
+```
 ### 10.I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
+Yes. There has to be a call from the main() to the other functions.
+
 ### 11.I have heard of a term called structures in C - what is its relation to structured programming
 ### 12.In a C function while declaring variables, I had mentioned a keyword static will this make any difference ? if so what it is ?
 ### 13.I am writing a C program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
