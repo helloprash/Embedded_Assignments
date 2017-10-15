@@ -157,8 +157,8 @@ Symbol|Operator
  \|    |bitwise inclusive OR
 ^     |bitwise XOR (eXclusive OR)
 <<    |left shift
- >>    |right shift
- ~     |bitwise NOT (one's complement) (unary)
+\>>    |right shift
+\~     |bitwise NOT (one's complement) (unary)
 
 ### 8.While talking to a friend I heard of a term called variable parameters in C what exactly it is can you explain to me ?
 Variable parameters also called variable arguments in which the function can take variable number of arguments instead of predefined number of parameters.
