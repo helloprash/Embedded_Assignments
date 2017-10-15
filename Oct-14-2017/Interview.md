@@ -108,12 +108,40 @@ Once the operations on the file have been done, we need to close the file using 
 
 ### 3.What is the function call (or API) to open a file. Can you explain all the parameters that this API takes and list all possible variations of the parameters of this function.
 The function call for opening a file is ```FILE *fopen(const char *filename, const char *mode)```
+
 Filename is the name of the file that has to be opened.
+
 Mode is the type of operation that is performed on the file.
 
 ### 4.Have you heard of a term called enumuration ?
+Enumeration is a user defined data type in C. It is mainly used to assign names to integral constants.
+
 ### 5.In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
+If the first parameter is replaced with ```STDOUT``` then it prints the output to the screen.
+
 ### 6.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
+Recursion means calling the function within the same function with some exit condition. 
+```
+#include <stdio.h>
+ 
+int factorial(int n)
+{   
+    if(n==1)    
+       return 1;
+    return n*factorial(n-1);
+}
+main()
+{
+    int num;
+    int fact=0;
+     
+    printf("Enter an integer number: ");
+    scanf("%d",&num);
+     
+    fact=factorial(num);
+    printf("Factorial of %d is = %d",num,fact);
+}
+```
 ### 7.Can you help to understand what are bit wise operators ?
 ### 8.While talking to a friend I heard of a term called variable parameters in C what exactly it is can you explain to me ?
 ### 9.Can you explain to me with an example how to use command line program with an example ?
