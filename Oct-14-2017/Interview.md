@@ -95,3 +95,19 @@ main()
      }
 ```
 The compiler does not give any errors.
+
+### 1.Do we really need a break statement in defualt condition of a switch() - case: statement
+### 2.For doing a file operation we need to open the file. What are the checks and things to be done while handling a file ?
+### 3.What is the function call (or API) to open a files can you explain all the parameters that this API takes and list all possible variations of the parameters of this function.
+### 4.Have you heard of a term called enumuration ?
+### 5.In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
+### 6.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
+### 7.Can you help to understand what are bit wise operators ?
+### 8.While talking to a friend I heard of a term called variable parameters in C what exactly it is can you explain to me ?
+### 9.Can you explain to me with an example how to use command line program with an example ?
+### 10.I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
+### 11.I have heard of a term called structures in C - what is its relation to structured programming
+### 12.In a C function while declaring variables, I had mentioned a keyword static will this make any difference ? if so what it is ?
+### 13.I am writing a C program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
+### 14.Arrays are easy to use,still we go with Linked list what is the reason for this ?
+### 15.In C function there are two terms, actual parameters and formal parameters. What are they ?
