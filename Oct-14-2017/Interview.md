@@ -102,11 +102,17 @@ The ```break``` statement for the ```default``` condition is technically not nee
 ### 2.For doing a file operation we need to open the file. What are the checks and things to be done while handling a file ?
 When using command line arguments for specifying the file name, we need to check if the file name is included in the command line.
 
-We have to check if the pointer to the file returns a NULL.
+We have to check if the pointer to the file returns a ```NULL```
 
 Once the operations on the file have been done, we need to close the file using ```fclose(pointer)```
 
-### 3.What is the function call (or API) to open a files can you explain all the parameters that this API takes and list all possible variations of the parameters of this function.
+### 3.What is the function call (or API) to open a file. Can you explain all the parameters that this API takes and list all possible variations of the parameters of this function.
+The function call for opening a file is ```FILE *fopen(const char *filename, const char *mode)```
+
+Filename is the name of the file that has to be opened.
+
+Mode is the type of operation that is performed on the file.
+
 ### 4.Have you heard of a term called enumuration ?
 ### 5.In fprintf() which prints a string to a file, what happen if the first parameter is replaced with stdout ?
 ### 6.Have you heard of word recursion, what is it used ? Can you write a small program which uses recursion ?
