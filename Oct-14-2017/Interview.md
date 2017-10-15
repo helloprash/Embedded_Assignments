@@ -150,6 +150,7 @@ main()
 Bit wise operators are used to perform bit level operations.
 
 There are 6 operators
+
 Symbol|Operator
 ----  |----
 &     |bitwise AND
