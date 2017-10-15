@@ -18,19 +18,14 @@ When an array is declared, it is created in the Stack.
 
 ### 5.What are the different types of Storate Class specifiers in C ? - List all of them When and how they should be used
 The types of Storage class specifiers are
-auto: Variables belonging to Auto are local to that block and are destroyed when the block has finished it's execution
-      All variables declared by default belongs to Auto storage class. It is declared by using the keyword Auto
-extern: When extern specifier is used with a variable declaration then no storage is allocated to that variable and it 
-	is assumed that the variable has already been defined elsewhere in the program.
-static: Static variables are not visible outside its function and they are not destroyed once the funtion or block has 
-	has finished its execution.
-register: The variables declared with register specifier are allocated memory in the CPU register.
+1. auto: Variables belonging to Auto are local to that block and are destroyed when the block has finished it's execution. All variables declared by default belongs to Auto storage class. It is declared by using the keyword Auto
+1. extern: When extern specifier is used with a variable declaration then no storage is allocated to that variable and it is assumed that the variable has already been defined elsewhere in the program.
+1. static: Static variables are not visible outside its function and they are not destroyed once the funtion or block has finished its execution.
+1. register: The variables declared with register specifier are allocated memory in the CPU register.
 
 ### 6.I have doubt - can you tell me when I should use while() loop and do while() loop ? I really do not under stand the difference betweeb these two, can you explain to me ?
-while() loop: A while loop is used when a given set of instruction are to be executed over and over until the condition is 
-	      is set false.
-do while() loop: A do while loop is similar to that of a while loop except that the given set of instructions are executed atleast 
-		once before the conditions are checked.
+while() loop: A while loop is used when a given set of instruction are to be executed over and over until the condition is set false.
+do while() loop: A do while loop is similar to that of a while loop except that the given set of instructions are executed atleast once before the conditions are checked.
 		
 ### 7.Recently while going through a C program I saw two functions malloc() & calloc() can you tell me what are they used for ?
 malloc() function is used to allocate a block of memory to the variable from the heap and returns a void pointer to the begining of the block.malloc doesn't initializes the allocated memory.
