@@ -126,9 +126,13 @@ Recursion means calling the function within the same function with some exit con
  
 int factorial(int n)
 {   
+ int fact;
+ 
     if(n==1)    
        return 1;
-    return n*factorial(n-1);
+       
+    fact=n*factorial(n-1);
+    return fact;
 }
 main()
 {
@@ -143,6 +147,18 @@ main()
 }
 ```
 ### 7.Can you help to understand what are bit wise operators ?
+Bit wise operators are used to perform bit level operations.
+
+There are 6 operators
+Symbol|Operator
+----  |----
+&     |bitwise AND
+|     |bitwise inclusive OR
+^     |bitwise XOR (eXclusive OR)
+<<    |left shift
+>>    |right shift
+~     |bitwise NOT (one's complement) (unary)
+
 ### 8.While talking to a friend I heard of a term called variable parameters in C what exactly it is can you explain to me ?
 ### 9.Can you explain to me with an example how to use command line program with an example ?
 ### 10.I wrote a big program, but the entry point main() is empty is there any thing wrong with it ?
