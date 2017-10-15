@@ -48,7 +48,6 @@ main()
 	.
 	.
 	free(temp);
-
 }
 ```
 
@@ -92,7 +91,6 @@ main()
            case 4:   {
                         break ;
                      }
-                    
         }
      }
 ```
