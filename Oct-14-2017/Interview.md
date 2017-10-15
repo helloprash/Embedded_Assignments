@@ -38,7 +38,7 @@ malloc() function is used to allocate a block of memory to the variable from the
 calloc() allocates a block of memory and initializes the allocated memory to zero.
 
 ### 8.Can you explain to me with the help of a small program how malloc() is used ?
-'''
+```
 #include<stdio.h>
 #include<malloc.h>
 
@@ -49,7 +49,7 @@ main()
 	free(temp);
 
 }
-'''
+```
 
 ### 9.I keep hearing the term Pointers in C, what is it all about ? Have you used it any time ?
 A pointer is a variable which contains the address of another variable. It is declared by using the symbol *
@@ -69,7 +69,7 @@ A program is said to be modular if the program is divided into seperate modules 
 A switch case statement is used to execute different parts of the code based on the value of the expression.
 
 ### 14.Can you Look at the following code ............ will the compiler gives an error ?
-'''
+```
 main()
      {
         int i ;
@@ -94,5 +94,5 @@ main()
                     
         }
      }
-'''
+```
 The compiler does not give any errors.
