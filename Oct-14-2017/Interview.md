@@ -192,6 +192,7 @@ Yes. There has to be a call from the main() to the other functions.
 ### 11.I have heard of a term called structures in C - what is its relation to structured programming
 
 ### 12.In a C function while declaring variables, I had mentioned a keyword static will this make any difference ? if so what it is ?
+When the variable is declared as Static, then that variable does not get destroyed after the scope of the variable is finished.
 
 ### 13.I am writing a C program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
 The data type to be used is Float.
