@@ -190,7 +190,20 @@ main(int argc, char *argv[])
 Yes. There has to be a call from the main() to the other functions.
 
 ### 11.I have heard of a term called structures in C - what is its relation to structured programming
+
 ### 12.In a C function while declaring variables, I had mentioned a keyword static will this make any difference ? if so what it is ?
+
 ### 13.I am writing a C program to accuratly calculate the path of a aeroplane flying in the sky, with help of radar signals. What in the data type I need to use to get accurate value ?
+The data type to be used is Float.
+
 ### 14.Arrays are easy to use,still we go with Linked list what is the reason for this ?
+The size of the array cannot be changed at runtime whereas the size of the linked list can be dynamically allocated. Hence we opt for Linked List.
+
 ### 15.In C function there are two terms, actual parameters and formal parameters. What are they ?
+Parameter Written In Function Definition is Called “Formal Parameter”. 
+Ex:void Disp(int num2)
+   where num2 is the formal parameter.
+   
+Parameter Written In Function Call is Called “Actual Parameter”.
+Ex:Disp(num1)
+   where num1 is the actual parameter.
