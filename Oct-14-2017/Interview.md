@@ -201,9 +201,11 @@ The size of the array cannot be changed at runtime whereas the size of the linke
 
 ### 15.In C function there are two terms, actual parameters and formal parameters. What are they ?
 Parameter Written In Function Definition is Called “Formal Parameter”. 
-Ex:void Disp(int num2)
+Ex:```void Disp(int num2)```
+
    where num2 is the formal parameter.
    
 Parameter Written In Function Call is Called “Actual Parameter”.
-Ex:Disp(num1)
+Ex:```Disp(num1)```
+
    where num1 is the actual parameter.
