@@ -23,7 +23,7 @@ typedef struct node
     	else
     	{
     		scanPtr=head;  //scanPtr has the address of the previous node
-    		while(scanPtr->next!=NULL)
+    		while(scanPtr->next!=head)
     		{
     			scanPtr=scanPtr->next;
 	        }
@@ -34,7 +34,7 @@ typedef struct node
     	scanf("%d",&value);
     	temp->data=value;
     	
-    	temp->next=NULL;
+    	temp->next=head;
 	return;		
     }
 
@@ -46,7 +46,7 @@ typedef struct node
     	printf("empty");
     	else	
     	{
-    		while(ptr!=NULL)
+    		while(ptr->next!=head)
     		{
     			printf("%d ",ptr->data);
     			ptr=ptr->next;
@@ -119,7 +119,7 @@ typedef struct node
     	if(position==1)
     	{
     		head=ptr->next;
-    		ptr->next=NULL;
+    		ptr->next=head;
     		free(ptr);
     		count--;
     		printf("Done\n");
@@ -131,7 +131,7 @@ typedef struct node
 	}
 	temp=ptr->next;
 	ptr->next=temp->next;
-	temp->next=NULL;
+	temp->next=head;
 	free(temp);
 	count--;
 	printf("Done\n");
@@ -149,7 +149,7 @@ typedef struct node
     	head=NULL;
     	NODE *temp;
     	
-    	while(ptr!=NULL)
+    	while(ptr->!=head)
     	{
     		temp=ptr->next;
     		ptr->data=0;
@@ -176,7 +176,7 @@ typedef struct node
 		printf("\nEnter the value to be searched:");
 		scanf("%d",&value);	
 
-		while(ptr!=NULL)
+		while(ptr->!=head)
 		{
 			if(ptr->data==value)
 			{
